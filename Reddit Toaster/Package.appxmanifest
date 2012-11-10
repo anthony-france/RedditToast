@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="949515b1-2734-4421-89bc-13d032c61fba" Publisher="CN=anthony" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>Reddit Toast</DisplayName>
+    <PublisherDisplayName>anthony</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Reddit_Toast.App">
+      <VisualElements DisplayName="Reddit Toast" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Reddit Toast displays toast notifications when you receive messages and post/comment replies on reddit.com. Note on  Windows 8 Limitations:  If the app is on the lock screen the app will check for new messages every 15 minutes.  If the app is not the app will update every 2 hours. The only way to provide more timly updates is with reddit supplying push notifications or for microsoft to change these power saving limitations.  Windows also forces the lockscreen icon to be desaturated so no orangered icon on the lock screen.  (Interestingly its colorized on the lockscreen page in the settings area.)" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
+        <LockScreen Notification="badge" BadgeLogo="Assets\hasmail-24px.png" />
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.CheckMessagesBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

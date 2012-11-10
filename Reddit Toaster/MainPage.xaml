@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="Reddit_Toast.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Reddit_Toast"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="561*"/>
+            <RowDefinition Height="104*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="579*"/>
+            <ColumnDefinition Width="52*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Margin="10" Grid.Row="1" Source="Assets/SplashScreen.png" Stretch="None"/>
+        <TextBox x:Name="txtRedditUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,29,0,0" Width="464" Grid.Column="1" Height="32" Grid.Row="1" LostFocus="txtRedditUsername_LostFocus"/>
+        <PasswordBox x:Name="txtRedditPassword" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0" Width="464" Grid.Column="1" Height="32" Grid.Row="1" LostFocus="txtRedditPassword_LostFocus" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="Reddit Password" VerticalAlignment="Top" Grid.Column="1" Height="13" Width="464" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Reddit Username" VerticalAlignment="Top" Grid.Column="1" Height="13" Width="464" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Status:" Grid.Column="1" Margin="4,0,0,10" Grid.Row="2" Height="13" VerticalAlignment="Bottom" Opacity="0.15" />
+        <TextBlock x:Name="txtStatus" Grid.Column="1" HorizontalAlignment="Left" Margin="41,0,0,10" Grid.Row="2" TextWrapping="Wrap" Text="Startup" Height="13" VerticalAlignment="Bottom" Opacity="0.15"/>
+        <ToggleSwitch x:Name="togToastLength" Grid.Column="1" Header="Toast Length" HorizontalAlignment="Left" Margin="10,0,0,210" Grid.Row="1" VerticalAlignment="Bottom" OffContent="Short" OnContent="Long" Height="72" Width="165" Toggled="togToastLength_Toggled"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,158" Grid.Row="1" TextWrapping="Wrap" Text="Notifications can be disabled through the apps permissions men or within the settings panel." Opacity="0.15" Height="46" VerticalAlignment="Bottom" Width="225"/>
+        <ToggleSwitch x:Name="togPersistant" Grid.Column="1" Header="Persistant Toasts" HorizontalAlignment="Left" Margin="10,0,0,61" Grid.Row="1" VerticalAlignment="Bottom" Height="73" Width="154" Toggled="togPersistant_Toggled"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Toast once per new message or keep popping up toasts until message is read on reddit.com" Opacity="0.15" Height="46" VerticalAlignment="Bottom" Width="225"/>
+    </Grid>
+</Page>
